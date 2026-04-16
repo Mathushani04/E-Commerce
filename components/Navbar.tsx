@@ -63,17 +63,17 @@ const Navbar: React.FC<NavbarProps> = ({
   return (
     <div className="w-full font-sans">
       {/* Tier 1: Main Header (Non-sticky usually, but we'll make the whole header follow) */}
-      <header className="bg-white border-b border-[#A5D6A7]/20 relative z-[60]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="bg-white border-b border-[#A5D6A7]/20 relative z-[60] w-full">
+        <div className="w-full px-6 lg:px-10">
           <div className="flex items-center justify-between h-20 gap-8">
             
             {/* Left: Logo */}
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center space-x-1 group">
-                <span className="text-4xl font-black text-[#1B5E20] transition-colors group-hover:text-[#4CAF50]">
+                <span className="text-3xl font-black text-[#1B5E20] tracking-tighter uppercase transition-colors group-hover:text-[#4CAF50]">
                   GLOBALTRADE
                 </span>
-                <span className="text-3xl font-light text-[#4CAF50] tracking-widest">LK</span>
+                <span className="text-2xl font-light text-[#4CAF50] tracking-widest">2K</span>
               </Link>
             </div>
 
@@ -149,7 +149,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
       {/* Tier 2: Sub-Nav (Sticky) */}
       <nav className={`w-full bg-white/95 backdrop-blur-md z-50 transition-all duration-300 ${isScrolled ? 'fixed top-0 shadow-lg border-b border-[#A5D6A7]/20 py-1' : 'relative py-3 border-b border-[#A5D6A7]/10'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-6 lg:px-10">
           <div className="hidden lg:flex items-center justify-center space-x-12">
             {categories.map((cat) => (
               <div 
@@ -169,7 +169,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 {/* Mega Menu */}
                 {cat.hasMega && isMegaMenuOpen === cat.slug && (
                   <div className="fixed left-0 right-0 top-[100%] bg-white border-y border-[#A5D6A7]/20 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-300">
-                    <div className="max-w-7xl mx-auto grid grid-cols-4 gap-12 p-12">
+                    <div className="w-full grid grid-cols-4 gap-12 p-12 px-10">
                       {cat.items?.map((item) => (
                         <div key={item.title} className="space-y-6">
                           <div className="flex items-center space-x-3 text-[#1B5E20]">
